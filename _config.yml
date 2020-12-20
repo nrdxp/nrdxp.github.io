@@ -22,7 +22,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://nrdxp.dev" # the base hostname & protocol for your site, e.g. http://example.com
 
-show_excerpts: true
+show_excerpts: false
 github_username:  nrdxp
 
 # Build settings

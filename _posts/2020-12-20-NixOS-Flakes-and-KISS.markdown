@@ -24,24 +24,24 @@ After years of working with NixOS, I strongly felt that the community as a whole
 could benefit from a standardized structure and format for NixOS configurations
 in general. It appears that every developer is  essentially reinventing the
 wheel when it comes to the "shape" of their deployments, leading to a lot of
-confusion as to what the idioms and best practices should be, expecially for
+confusion as to what the idioms and best practices should be, especially for
 newcomers.
 
-Having a mindshare to collect the best ideas concerning structure and
+Having a mind share to collect the best ideas concerning structure and
 method would be valuable, not only for its pragmatic implications, but also to
 help ease adoption and onboarding for new NixOS users; something that has
 traditionally been difficult up to now.
 
 Of course this really hinges on wider community support, as my ideas alone
-definitely shouldn't be the final word on what consitutes a correct and well
-organized NixOS codebase. Rather, I am hoping to cajole the community foward
+definitely shouldn't be the final word on what constitutes a correct and well
+organized NixOS codebase. Rather, I am hoping to cajole the community forward
 by providing useful idioms for others to expand on.
 
 Even if my ideas lose out in the end, I sincerely hope they will, at the very
 least, push the community toward some level of consensus in regards to the way
 NixOS code repositories are structured and managed.
 
-That said, nixflk appears to be gaining a bit of popularity amongst new flake
+That said, nixflk appears to be gaining a bit of popularity among new flake
 adopters and I am really quite excited and humbled to see others engage the
 repository. If you have contributed to the project, thank you so much for your
 time and support!
@@ -74,7 +74,7 @@ procrastination, I dove head first.
 At first everything seemed almost perfect. NixOS felt like Ansible on steroids,
 and there was more than enough code available in nixpkgs to meet my immediate
 needs. Getting up to speed on writing derivations and modules was fairly
-straightfoward and the devops dream was in sight.
+straightforward and the DevOps dream was in sight.
 
 It wasn't all sunshine and rainbows, as channel updates sometimes caused
 the same sort of breakage I moved to NixOS to avoid. But simple generation
@@ -130,14 +130,14 @@ should be used to encapsulate any configuration which would be useful for more
 than one specific machine.
 
 To put it another way, instead of defining my entire NixOS system in a
-monolithic module, I break it up into smaller, resuable profiles which can
+monolithic module, I break it up into smaller, reusable profiles which can
 be themselves be made up of profiles. Composability is key here, as I don't
 necessarily want to use every profile on every system I deploy.
 
 As a concrete example, my [develop][develop], profile pulls in my preferred
 developer tools such as my shell, and text editor configurations. It can be
 thought of as a meta-profile, made up of smaller individual profiles. I can
-either pull in the whole thing, which brings all the dependant profiles along
+either pull in the whole thing, which brings all the dependent profiles along
 with it, or I can just import a single profile from within, say my zsh
 configuration, leaving all the rest unused. Every profile is a directory with
 a `default.nix` defining it. You can have whatever else you need inside the
@@ -147,11 +147,11 @@ Let's draw the obvious parallel to the Unix philosophy here. Profiles work
 best when they do one thing, and do it well. Don't provision multiple programs
 in one profile, instead split them up into individual profiles, and then if you
 often use them together, import them both in a parent profile. You can simply
-import dependant profiles via the `imports` attribute as usual, ensuring
+import dependent profiles via the `imports` attribute as usual, ensuring
 everything required is always present.
 
 The key is this, by simply taking what we already know, i.e. NixOS modules, and
-sticking to the few simple idioms outlined above, we gain composibility and
+sticking to the few simple idioms outlined above, we gain composability and
 reusability without actually having to learn anything new. I want to drill this
 point home, because that's really all there is to nixflk!
 
@@ -199,7 +199,7 @@ to other flakes to import from nixflk!
 This setup serves a dual purpose. For people who already know the nixpkgs
 workflow, it's business as usual, and for individuals who aren't familiar with
 nixpkgs but wish to become so, they can quickly get up to speed on how to add
-packages and modules themselves, in the exact same way they would do so upsteam
+packages and modules themselves, in the exact same way they would do so upstream
 proper.
 
 Now what about overlays? Well, any overlay defined in a nix file under the
@@ -221,7 +221,7 @@ That should just about do it for nixflk's current quality of life features, but
 there are more ideas brewing.
 
 # What's next?
-I'm working on a system for seemlessly importing modules, packages and
+I'm working on a system for seamlessly importing modules, packages and
 overlays from other flakes, which isn't too hard as it is, but it's messy
 because the current `flake.nix` has a lot of business logic that gets in the way.
 
@@ -243,7 +243,7 @@ We really have no tests to speak of as is. The auto import functions for the
 
 ## A call to arms!
 If you'd like to help, please jump in. I am very much open to any ideas that
-could reduce the complexity or simplify the ui. If you have a profile you
+could reduce the complexity or simplify the UI. If you have a profile you
 believe would be useful to others, please open a [Pull Request][pr].
 
 If you think I am crazy and wasting my time, please don't hesitate to say so! I

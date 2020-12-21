@@ -18,12 +18,15 @@ include: [".well-known"]
 title: nrdxp
 email: tim@nrdxp.dev
 description: >- # this means to ignore newlines until "baseurl:"
-  A blog about life, and the nature of all things code.
+  A blog about life, code and the nature of all things.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://nrdxp.dev" # the base hostname & protocol for your site, e.g. http://example.com
 
 show_excerpts: false
 github_username:  nrdxp
+
+disqus:
+  shortname: nrdxp
 
 # Build settings
 markdown: kramdown

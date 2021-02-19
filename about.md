@@ -4,12 +4,18 @@ title: About
 permalink: /about/
 ---
 
-# Open Source Projects
-[nixflk](https://github.com/nrdxp/nixflk) | [docs](../nixflk)
-
-Welcome to my neck of the woods. If you need help with something, or just wish
-to contact me, the best way to get my attention is via email.
+### Feb 21
+[Put][cal] your name or send an email to chat:
+| S | M | T | W | T | F | S |
+|---|---|---|---|---|---|---|
+|   | 1 | 2 | 3 | 4 | 5 | 6 |
+| . | . | . |
+| - |
+| - |
+| - |
 
 If you have an issue with any open source software I maintain, or you find an
-issue or typo in the blog, please don't hesitate to file a
+issue or typo in this blog, please don't hesitate to file a
 [PR](https://github.com/nrdxp/nrdxp.github.io).
+
+[cal]: https://github.com/nrdxp/nrdxp.github.io/edit/master/about.md

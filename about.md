@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 # Open Source Projects
-[nixflk](https://github.com/nrdxp/nixflk) | [docs](../nixflk)
+[DevOS](https://github.com/divnix/devos) | [docs](https://devos.divnix.com)
 
 Welcome to my neck of the woods. If you need help with something, or just wish
 to contact me, the best way to get my attention is via email.

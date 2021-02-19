@@ -16,7 +16,7 @@ on just that premise. If you are new to flakes, it is highly recommended that
 you check it out before continuing with this post.
 
 Now, I'd like to introduce a project I've been slowly building up since
-flakes were introduced called [nixflk][nixflk].
+flakes were introduced called [DevOS][DevOS].
 
 # So what is it anyway?
 
@@ -41,7 +41,7 @@ Even if my ideas lose out in the end, I sincerely hope they will, at the very
 least, push the community toward some level of consensus in regards to the way
 NixOS code repositories are structured and managed.
 
-That said, nixflk appears to be gaining a bit of popularity among new flake
+That said, DevOS appears to be gaining a bit of popularity among new flake
 adopters and I am really quite excited and humbled to see others engage the
 repository. If you have contributed to the project, thank you so much for your
 time and support!
@@ -98,7 +98,7 @@ composable across machines. I had a first iteration using the traditional
 complex than it really needed to be.
 
 My eagerness to get started using flakes was the perfect excuse to start from
-scratch, and so began nixflk. An attempt to address my concerns, using flakes.
+scratch, and so began DevOS. An attempt to address my concerns, using flakes.
 
 ## How does it work?
 
@@ -110,7 +110,7 @@ I see a lot of new users struggling to dive in and get up to speed with the Nix
 language, and particularly, getting up and running with a usable and productive
 system can take some serious time. I know it did for me.
 
-The hope for nixflk is to alleviate some of that pain so folks can get to
+The hope for DevOS is to alleviate some of that pain so folks can get to
 work faster and more efficiently, with less frustration and more enthusiasm for
 the power that Nix enables. I especially don't want anyone turning away from
 our amazing ecosystem because their onboarding experience was too complex
@@ -118,7 +118,7 @@ or overwhelming.
 
 # Everything is a profile!
 
-At the heart of nixflk is the [profile][profiles]. Of course, these profiles
+At the heart of DevOS is the [profile][profiles]. Of course, these profiles
 are really nothing more than good ol' NixOS [modules][modules]. The only reason
 I've decided to rebrand them at all is to draw a distinction in how they are
 used. They are kept as simple as possible on purpose; if you understand modules
@@ -153,7 +153,7 @@ everything required is always present.
 The key is this, by simply taking what we already know, i.e. NixOS modules, and
 sticking to the few simple idioms outlined above, we gain composability and
 reusability without actually having to learn anything new. I want to drill this
-point home, because that's really all there is to nixflk!
+point home, because that's really all there is to DevOS!
 
 Besides a few simple convenience features outlined below, profiles are the star
 of the show. It's really nothing revolutionary, and that's on purpose! By
@@ -171,7 +171,7 @@ on my own machines.
 
 # Anything else I should know?
 
-As mentioned briefly above, nixflk also has some convenience features to make
+As mentioned briefly above, DevOS also has some convenience features to make
 life easier.
 
 For starters, you might be wondering how we actually define a configuration for
@@ -194,7 +194,7 @@ So, you'd define a package or module the exact same way you would in nixpkgs
 itself, but instead of adding it to all-packages.nix or module-list.nix, you add
 it to pkgs/default.nix and modules/list.nix. Anything pulled in these two files
 will become available in any machine defined in the hosts directory, as well as
-to other flakes to import from nixflk!
+to other flakes to import from DevOS!
 
 This setup serves a dual purpose. For people who already know the nixpkgs
 workflow, it's business as usual, and for individuals who aren't familiar with
@@ -217,7 +217,7 @@ output so other people can pull in your link directly from your flake! My
 personal cachix repo is setup by default. It provides the packages the flake
 exports so you don't have to build them.
 
-That should just about do it for nixflk's current quality of life features, but
+That should just about do it for DevOS's current quality of life features, but
 there are more ideas brewing.
 
 # What's next?
@@ -234,7 +234,7 @@ suite.
 Additionally, I want to implement an easy way to actually install NixOS on the
 bare metal from directly within the project. I know the [deploy-rs][deploy-rs]
 project is working on this, and I'm interested in supporting their project
-in nixflk so as to add extra flexibility and power to installation and
+in DevOS so as to add extra flexibility and power to installation and
 deployment!
 
 Also, certain parts of the flake should be tested to ensure things don't break.
@@ -249,16 +249,16 @@ believe would be useful to others, please open a [Pull Request][pr].
 If you think I am crazy and wasting my time, please don't hesitate to say so! I
 typically find critical feedback to be some of the most helpful. Most of all,
 if you made it this far, thanks for taking some time to read about my efforts
-and please consider giving nixflk a shot!
+and please consider giving DevOS a shot!
 
 
 [nix]: https://nixos.org
-[nixflk]: https://github.com/nrdxp/nixflk
+[DevOS]: https://github.com/divnix/DevOS
 [rfcs]: https://github.com/NixOS/rfcs
 [modules]: https://nixos.org/manual/nixos/stable/index.html#sec-writing-modules
-[profiles]: https://github.com/nrdxp/nixflk/tree/template/profiles
-[develop]: https://github.com/nrdxp/nixflk/tree/template/profiles/develop
-[hosts]: https://github.com/nrdxp/nixflk/tree/template/hosts
+[profiles]: https://github.com/divnix/devos/tree/template/profiles
+[develop]: https://github.com/divnix/devos/tree/template/profiles/develop
+[hosts]: https://github.com/divnix/devos/tree/template/hosts
 [deploy-rs]:  https://serokell.io/blog/deploy-rs
 [home-manager]: https://github.com/nix-community/home-manager
-[pr]: https://github.com/nrdxp/nixflk/pulls
+[pr]: https://github.com/divnix/devos/pulls
